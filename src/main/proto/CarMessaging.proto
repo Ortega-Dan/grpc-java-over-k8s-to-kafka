@@ -1,0 +1,16 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "io.nuvalence.au";
+
+message CarInfo{
+	string carMessage = 1;
+	int64 carId = 2;
+}
+
+message CarConfirmation{
+	string serverResponse = 1;
+}
+
+service CarService {
+	rpc carTalking(CarInfo) returns (CarConfirmation);
+}
