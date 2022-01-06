@@ -27,8 +27,7 @@ public class KafkaCarMessageWriter {
 
     public static void pushToKafkaTopic(String topic, long carId, String carMessage) {
 
-        producer.send(new ProducerRecord<String, String>(topic, "" + carId,
-                carMessage));
+        producer.send(new ProducerRecord<String, String>(topic, "" + carId, "" + carId + ": " + carMessage));
 
     }
 
