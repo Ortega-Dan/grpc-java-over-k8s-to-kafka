@@ -18,3 +18,13 @@ and run client by running an different instance of that jar as:
 ```bash
 java -cp theResultingJar.jar io.nuvalence.au.grpcclient.ClientRunner [CarID] [CarMessage]
 ```
+
+___
+# Sources of understanding:
+https://developers.google.com/protocol-buffers/docs/javatutorial
+
+https://grpc.io/docs/languages/java/quickstart/
+
+https://github.com/grpc/grpc-java/tree/master/examples/src/main/java/io/grpc/examples/helloworld
+
+https://www.baeldung.com/grpc-introduction
