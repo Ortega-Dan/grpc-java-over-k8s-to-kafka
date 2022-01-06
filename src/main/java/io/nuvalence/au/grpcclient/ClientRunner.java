@@ -7,10 +7,7 @@ import io.nuvalence.au.CarInfo;
 import io.nuvalence.au.CarServiceGrpc;
 import io.nuvalence.au.CarServiceGrpc.CarServiceBlockingStub;
 
-/**
- * Hello world!
- *
- */
+
 public class ClientRunner {
     public static void main(String[] args) {
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080).usePlaintext().build();
