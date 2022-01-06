@@ -7,7 +7,6 @@ import io.nuvalence.au.CarInfo;
 import io.nuvalence.au.CarServiceGrpc;
 import io.nuvalence.au.CarServiceGrpc.CarServiceBlockingStub;
 
-
 public class ClientRunner {
     public static void main(String[] args) {
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080).usePlaintext().build();
@@ -20,8 +19,7 @@ public class ClientRunner {
 
         String serverResponseString = carConfResponse.getServerResponse();
 
-        System.out.println("Server response:");
-        System.out.println(serverResponseString);
+        System.out.println("Server response:\n" + serverResponseString + "\n");
 
         channel.shutdown();
 
