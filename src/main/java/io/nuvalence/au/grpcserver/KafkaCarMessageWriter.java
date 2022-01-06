@@ -30,7 +30,6 @@ public class KafkaCarMessageWriter {
         producer.send(new ProducerRecord<String, String>(topic, "" + carId,
                 carMessage));
 
-        // producer.close();
     }
 
 }
