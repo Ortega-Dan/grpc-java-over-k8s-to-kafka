@@ -1,9 +1,13 @@
-# build with:
+# gRPC car service
+
+## build with:
 ```bash
 mvn clean compile assembly:single
 ```
 
 jar with dependencies will be inside target ...
+___
+## running server and client:
 
 then run server by running an instance of that jar as:
 ```bash
