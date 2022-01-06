@@ -7,6 +7,8 @@ import io.nuvalence.au.CarServiceGrpc.CarServiceImplBase;
 
 public class CarServiceImpl extends CarServiceImplBase {
 
+
+
     @Override
     public void carTalking(CarInfo request, StreamObserver<CarConfirmation> responseObserver) {
 
@@ -19,6 +21,8 @@ public class CarServiceImpl extends CarServiceImplBase {
                 "Car " + request.getCarId() + ". Your message (" + request.getCarMessage()
                         + ") has been received and piped to Kafka !!")
                 .build();
+
+        KafkaCarMessageWriter.pushToKafkaTopic("car-message-events", request.getCarId(), request.getCarMessage());
 
         responseObserver.onNext(carConfirm);
         responseObserver.onCompleted();

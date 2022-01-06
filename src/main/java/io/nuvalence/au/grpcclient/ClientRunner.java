@@ -19,7 +19,7 @@ public class ClientRunner {
 
         String serverResponseString = carConfResponse.getServerResponse();
 
-        System.out.println("Server response:\n" + serverResponseString + "\n");
+        System.out.println("\nServer response:\n" + serverResponseString);
 
         channel.shutdown();
 
