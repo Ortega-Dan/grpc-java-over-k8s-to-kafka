@@ -10,7 +10,7 @@ public class KafkaCarMessageWriter {
 
     public static Producer<String, String> producer;
 
-    static {
+    public static void initializeKafkaProducer() {
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9092");
         props.put("acks", "all");
@@ -22,7 +22,6 @@ public class KafkaCarMessageWriter {
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
         producer = new KafkaProducer<>(props);
-
     }
 
     public static void pushToKafkaTopic(String topic, long carId, String carMessage) {

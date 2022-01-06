@@ -9,14 +9,19 @@ public class GrpcServerRunner {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        int port = 8080;
+        KafkaCarMessageWriter.initializeKafkaProducer();
 
+        int grpcport = 8080;
         Server server = ServerBuilder
-                .forPort(port)
+                .forPort(grpcport)
                 .addService(new CarServiceImpl()).build();
 
         server.start();
-        System.out.println("Server listening in port " + port);
+
+        System.out.println("******************************************");
+        System.out.println(" gRPC Server listening in port " + grpcport);
+        System.out.println("******************************************");
+
         server.awaitTermination();
 
     }

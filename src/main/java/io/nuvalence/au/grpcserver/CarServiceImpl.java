@@ -15,7 +15,8 @@ public class CarServiceImpl extends CarServiceImplBase {
         System.out.println("gRPC Service is being called !!");
         System.out.println("Data: ");
         System.out.println("CarID: " + request.getCarId());
-        System.out.println("CarMessage: " + request.getCarMessage() + "\n");
+        System.out.println("CarMessage: " + request.getCarMessage());
+        System.out.println("(piping message to Kafka)\n");
 
         CarConfirmation carConfirm = CarConfirmation.newBuilder().setServerResponse(
                 "Car " + request.getCarId() + ". Your message (" + request.getCarMessage()
