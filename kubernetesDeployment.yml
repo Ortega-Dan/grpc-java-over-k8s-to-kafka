@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: grpccars
+  name: grpccars
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grpccars
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: grpccars
+    spec:
+      containers:
+      - image: docker.io/test/grpccars:latest
+        name: grpccars
+        resources: {}
+        imagePullPolicy: Never
+status: {}

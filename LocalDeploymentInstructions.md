@@ -27,3 +27,24 @@ And then deploy from the yaml file with
 ```bash
 kubectl apply -f myFile.yml
 ```
+Check if working well with:
+```bash
+kubectl get deployments
+```
+and
+```bash
+kubectl get pods
+```
+Expose it as a service with (also change port as needed):
+```bash
+kubectl expose deployment youChosenK8sDeploymentName --type=LoadBalancer --port=8080
+```
+
+Make sure it is exposed with:
+```bash
+kubectl get services
+```
+Find your local service running ip with:
+```bash
+minikube service list
+```
