@@ -10,6 +10,13 @@
             "request": "launch",
             "mainClass": "io.nuvalence.au.grpcserver.GrpcServerRunner",
             "projectName": "cars"
+        },
+        {
+            "type": "java",
+            "name": "Launch Client",
+            "request": "launch",
+            "mainClass": "io.nuvalence.au.grpcclient.ClientRunner",
+            "args": ["12354456","Hola"]
         }
     ]
 }

@@ -1,4 +1,14 @@
-Everything from the same terminal
+
+If creating a minikube for the first time start it with:
+```bash
+minikube start --memory 8192 --cpus 4
+```
+otherwise with:
+```bash
+minikube start
+```
+
+Everything from the same terminal from here
 
 Before building the image run:
 

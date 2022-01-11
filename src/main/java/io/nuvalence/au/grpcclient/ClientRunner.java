@@ -9,6 +9,7 @@ import io.nuvalence.au.CarServiceGrpc.CarServiceBlockingStub;
 
 public class ClientRunner {
     public static void main(String[] args) {
+        // ManagedChannel channel = ManagedChannelBuilder.forAddress("192.168.49.2", 30911).usePlaintext().build();
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8080).usePlaintext().build();
 
         CarServiceBlockingStub stub = CarServiceGrpc.newBlockingStub(channel);
