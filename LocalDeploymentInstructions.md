@@ -58,3 +58,9 @@ Find your local service running ip with:
 ```bash
 minikube service list
 ```
+
+Read pod logs with:
+```bash
+kubectl logs -f theResultingNameOfThePod
+```
+(get the name of the pod with: kubectl get pods)
