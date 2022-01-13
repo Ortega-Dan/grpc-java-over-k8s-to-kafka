@@ -12,6 +12,7 @@ public class KafkaCarMessageWriter {
 
     public static void initializeKafkaProducer() {
         Properties props = new Properties();
+        // props.put("bootstrap.servers", "192.168.0.14:9092");
         props.put("bootstrap.servers", "localhost:9092");
         props.put("acks", "all");
         props.put("retries", 0);

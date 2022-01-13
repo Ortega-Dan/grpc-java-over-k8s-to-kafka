@@ -49,6 +49,10 @@ Expose it as a service with (also change port as needed):
 ```bash
 kubectl expose deployment youChosenK8sDeploymentName --type=LoadBalancer --port=8080
 ```
+or just as a single port exposure:
+```bash
+kubectl expose deployment youChosenK8sDeploymentName --type=NodePort --port=8080
+```
 
 Make sure it is exposed with:
 ```bash

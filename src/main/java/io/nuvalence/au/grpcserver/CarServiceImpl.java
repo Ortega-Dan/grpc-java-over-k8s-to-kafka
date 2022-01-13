@@ -1,5 +1,8 @@
 package io.nuvalence.au.grpcserver;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import io.grpc.stub.StreamObserver;
 import io.nuvalence.au.CarConfirmation;
 import io.nuvalence.au.CarInfo;
@@ -7,16 +10,16 @@ import io.nuvalence.au.CarServiceGrpc.CarServiceImplBase;
 
 public class CarServiceImpl extends CarServiceImplBase {
 
-
+    private final static Logger logger = LoggerFactory.getLogger(CarServiceImpl.class);
 
     @Override
     public void carTalking(CarInfo request, StreamObserver<CarConfirmation> responseObserver) {
 
-        System.out.println("gRPC Service is being called !!");
-        System.out.println("Data: ");
-        System.out.println("CarID: " + request.getCarId());
-        System.out.println("CarMessage: " + request.getCarMessage());
-        System.out.println("(piping message to Kafka)\n");
+        logger.info("gRPC Service is being called !!");
+        logger.info("Data: ");
+        logger.info("CarID: " + request.getCarId());
+        logger.info("CarMessage: " + request.getCarMessage());
+        logger.info("(piping message to Kafka)");
 
         CarConfirmation carConfirm = CarConfirmation.newBuilder().setServerResponse(
                 "Car " + request.getCarId() + ". Your message (" + request.getCarMessage()
@@ -28,6 +31,7 @@ public class CarServiceImpl extends CarServiceImplBase {
         responseObserver.onNext(carConfirm);
         responseObserver.onCompleted();
 
+        logger.info("Message successfully posted to Kafka\n");
     }
 
 }
