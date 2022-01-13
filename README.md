@@ -1,5 +1,10 @@
 # gRPC car service
 
+## Important about Kafka config
+Configure Kafka in file config/server.properties file (inside Kafka server)
+with the following data replacing "theIPofMyKafkaServer" by the public ip of the Kafka server, and make sure firewall accepts input to that port.
+> advertised.listeners=PLAINTEXT://theIPofMyKafkaServer:9092
+
 ## build with:
 ```bash
 mvn clean compile assembly:single
