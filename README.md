@@ -1,4 +1,4 @@
-# gRPC car service
+# gRPC Java over Kubernetes (K8s)
 
 ## Important about Kafka config
 Configure Kafka in file config/server.properties file (inside Kafka server)
