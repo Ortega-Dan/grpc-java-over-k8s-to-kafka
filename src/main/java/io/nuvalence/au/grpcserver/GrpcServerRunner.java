@@ -19,7 +19,9 @@ public class GrpcServerRunner {
         int grpcport = 8080;
         Server server = ServerBuilder
                 .forPort(grpcport)
-                .addService(new CarServiceImpl()).build();
+                .addService(new CarServiceImpl())
+                .intercept(new LoggingInterceptor())
+                .build();
 
         server.start();
 
