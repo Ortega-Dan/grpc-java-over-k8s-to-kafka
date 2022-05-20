@@ -3,6 +3,7 @@ package io.nuvalence.au.grpcserver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import io.grpc.ServerInterceptor;
 import io.grpc.stub.StreamObserver;
 import io.nuvalence.au.CarConfirmation;
 import io.nuvalence.au.CarInfo;
@@ -12,8 +13,16 @@ public class CarServiceImpl extends CarServiceImplBase {
 
     private final static Logger logger = LoggerFactory.getLogger(CarServiceImpl.class);
 
+    LoggingInterceptor interceptor;
+
+    public CarServiceImpl(LoggingInterceptor interceptor) {
+        this.interceptor = interceptor;
+    }
+
     @Override
     public void carTalking(CarInfo request, StreamObserver<CarConfirmation> responseObserver) {
+
+        
 
         logger.info("gRPC Service is being called !!");
         logger.info("Data: ");
