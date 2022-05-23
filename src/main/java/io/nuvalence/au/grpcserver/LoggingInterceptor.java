@@ -15,7 +15,7 @@ class LoggingInterceptor implements ServerInterceptor {
                 
         System.out.println("*****************");
         System.out.println(call.getAttributes().get(Grpc.TRANSPORT_ATTR_REMOTE_ADDR).toString().split(":")[0].substring(1));
-        System.out.println(call.getMethodDescriptor().getFullMethodName());
+        System.out.println(call.getMethodDescriptor().getFullMethodName().split("/")[1]);
         System.out.println("*****************");
 
         return next.startCall(call, headers);
